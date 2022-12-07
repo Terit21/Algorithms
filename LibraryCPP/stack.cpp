@@ -9,9 +9,14 @@ Stack *stack_create()
     return new Stack;
 }
 
-void stack_delete(Stack *stack)
+void stack_delete(Stack* stack)
 {
     // TODO: free stack elements
+    while (!stack_empty)
+    {
+        stack_pop(stack);
+    }
+    delete list_first(stack->list);
     delete stack;
 }
 
